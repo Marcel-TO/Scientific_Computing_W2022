@@ -123,6 +123,6 @@ for lieferX=1:5
     end
 end
 
-fprintf("Die optimale Position für das Lagerhaus befindet sich bei (Y=%d, X=%d) mit einer Distanz von %d \n", opt_lieferY, opt_lieferX, shortestDist);
+fprintf("Die optimale Position für das Lagerhaus befindet sich bei (%d, %d) mit einer Distanz von %d \n", opt_lieferY, opt_lieferX, shortestDist);
 %}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
