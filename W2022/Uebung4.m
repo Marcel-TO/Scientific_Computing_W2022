@@ -41,21 +41,21 @@ counter = 0;
 for i=1:n
     v(i) = poissrnd(pa(i),1,1);
 
+    % Nieren für beide Patienten vorhanden.
     if (v(i) >= 2 && pb(i) > pa(i))
         counter = counter + 1;
         continue;
     end
 
+    % In Lebenszeit von A kommt keine Niere -> Kommt in Lebenszeit von B
+    % eine wird dann geschaut.
     if (v(i) == 0 && pb(i) > pa(i) && poissrnd(pb(i) - pa(i),1,1) >= 1)
         counter = counter + 1;
         continue;
     end
 
-    if (v(i) == 1 && poissrnd(pb(i) - pa(i),1,1) >= 1 && pb(i) > pa(i))
-        counter = counter + 1;
-        continue;
-    end
-
+    % Lebenszeit von B ist kürzer als a und wie hoch ist die
+    % Wahrscheinlichkeit das 2 Nieren in dieser Zeit kommen.
     if (pb(i) < pa(i) && poissrnd(pb(i),1,1) >= 2)
         counter = counter + 1;
         continue;
@@ -75,13 +75,8 @@ poB = poissrnd(la*4, 1, n);
 solB = mean(poB < 1);
 
 %%
-% Aufgabe 4 Poissrnd Nieren -> Siehe W2021/Uebung4.m
-% a)
-n=1000;
-ma = max(exprnd(1,1,n), exprnd(2,1,n));
-pa = sum(ma) / n;
-
-%b)
-n=1000;
-ma = max(exprnd(1,1,n), exprnd(2,1,n));
-pb = sum(ma) / n;
+% Aufgabe 4
+n=10^6;
+leb = [exprnd(1,1,n);exprnd(2,1,n)];
+resA = mean(max(leb));
+resB = mean(min(leb));
