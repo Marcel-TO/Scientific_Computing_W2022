@@ -80,3 +80,26 @@ n=10^6;
 leb = [exprnd(1,1,n);exprnd(2,1,n)];
 resA = mean(max(leb));
 resB = mean(min(leb));
+
+%%
+% Aufgabe 5
+gewichte = [3,7,4,12,8,10,9,14,10,12];
+werte = [3,5,2,11,4,6,2,15,12,9];
+
+wertMax = 0;
+temp = 0;
+bestObj = [];
+
+for i=1:10
+    pos = nchoosek(1:10,i);
+    low60pos = pos .* (sum(gewichte(pos), 2) <= 60);
+    low60pos(~any(low60pos,2),:) = [];
+    
+    for j=1:size(low60pos,1)
+        temp = sum(werte(low60pos(j,:)));
+        if (temp >= wertMax)
+            wertMax = temp;
+            bestObj = low60pos(i,:);
+        end
+    end
+end

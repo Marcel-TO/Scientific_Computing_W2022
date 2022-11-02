@@ -60,7 +60,7 @@ plot(x,y);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %{
 % Optimierungen mit Nebenbedingungen
-% [v, opt] = fminunc(f, start, A, b, Aeq, beq, lb, ub, confun); 
+% [v, opt] = fmincon(f, start, A, b, Aeq, beq, lb, ub, confun); 
 %    ^
 %    |
 %  Siehe Folien
