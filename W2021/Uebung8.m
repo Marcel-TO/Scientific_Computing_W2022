@@ -33,7 +33,7 @@ beq = [];
 lb = zeros(8);
 ub = ones(8);
 
-[x, opt] = linprog(f, 1:8, A, b, Aeq, beq, lb, ub);
+[x, opt] = intlinprog(f, 1:8, A, b, Aeq, beq, lb, ub);
 %}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %{
