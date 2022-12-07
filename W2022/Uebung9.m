@@ -16,6 +16,3 @@ ylabel('BMI');
 
 f(40)
 fLinear(40)
-
-%%
-% Aufgabe 2
