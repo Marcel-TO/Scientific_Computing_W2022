@@ -106,7 +106,7 @@ x=ifft(y);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %{
 % Global Tonfolge darstellen
-[x Fs] = audioread('FurElise.wav');
+[x Fs] = audioread('W2021\FurElise.wav');
 N = length(x);
 F = Fs / N;
 f = [0:F:Fs/2];
@@ -127,11 +127,11 @@ stft(x,Fs, 'Window', rectwin(128), 'OverlapLength', 0);
 %{
 % Wavelets
 % cwt -> continous wavelet transformation
-[x Fs] = audioread('FurElise.wav');
+[x Fs] = audioread('W2021\FurElise.wav');
 cwt(x,Fs);
 %}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
+%{
 % Kobe Erdbeben begonnen?
 %data = readmatrix('Kobe.csv');
 %Alternativ:
