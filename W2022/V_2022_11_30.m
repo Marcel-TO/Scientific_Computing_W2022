@@ -1,8 +1,8 @@
 %%
 % Nicht-parametischer Fit
 % mit durchschnitssgerade
-opts = detectImportOptions('./W2021/NHANES470.csv');
-data = readtable('./W2021/NHANES470.csv', opts);
+opts = detectImportOptions('Data/NHANES470.csv');
+data = readtable('Data/NHANES470.csv', opts);
 
 scatter(data.Age, data.Height);
 f=fit(data.Age, data.Height, 'a+b*x', 'Startpoint', [0,0]);
@@ -11,8 +11,8 @@ plot(f, data.Age, data.Height);
 %%
 % Nicht-parametischer Fit
 % mit spline
-opts = detectImportOptions('./W2021/NHANES470.csv');
-data = readtable('./W2021/NHANES470.csv', opts);
+opts = detectImportOptions('Data/NHANES470.csv');
+data = readtable('Data/NHANES470.csv', opts);
 
 scatter(data.Age, data.Height);
 f=fit(data.Age, data.Height, 'smoothingspline', 'SmoothingParam', 0.001);

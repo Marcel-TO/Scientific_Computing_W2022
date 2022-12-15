@@ -1,7 +1,7 @@
 %%
 % Aufgabe 1
-opts = detectImportOptions("W2021/NHANES470.csv");
-data = readtable("W2021/NHANES470.csv", opts);
+opts = detectImportOptions("Data/NHANES470.csv");
+data = readtable("Data/NHANES470.csv", opts);
 
 scatter(data.Age, data.BMI);
 hold on;

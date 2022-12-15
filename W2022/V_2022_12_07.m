@@ -24,7 +24,7 @@ plot(t, x);
 % Signal-Vektor Beispiel
 
 % Signal-Vektor
-x = readmatrix("W2021\Signal.csv");
+x = readmatrix("Data/Signal.csv");
 
 % Sampling Frequenz
 Fs = 1000;
@@ -46,11 +46,11 @@ plot(t, x);
 
 %%
 % Nicht-stationäre Signale -> Für Elise
-[x Fs] = audioread('W2021\FurElise.wav');
+[x Fs] = audioread('Data/FurElise.wav');
 stft(x, Fs, 'Window', rectwin(128), 'OverlapLength', 0);
 stft(x, Fs, 'Window', rectwin(4096), 'OverlapLength', 0);
 
 %%
 % Wavelet
-[x Fs] = audioread('W2021\FurElise.wav');
+[x Fs] = audioread('Data/FurElise.wav');
 cwt(x, Fs);

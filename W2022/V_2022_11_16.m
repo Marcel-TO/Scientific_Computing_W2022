@@ -15,8 +15,8 @@ mesh(X,Y,f(X,y));
 
 %%
 % Prognose Körpergröße von Handspanne
-opts = detectImportOptions('./W2021/SurveyData.csv');
-data = readtable('./W2021/Surveydata.csv', opts);
+opts = detectImportOptions('Data/SurveyData.csv');
+data = readtable('./Data/Surveydata.csv', opts);
 
 % Variablen im Surveydata.csv File:
 % Age

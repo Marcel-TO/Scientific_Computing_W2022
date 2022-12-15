@@ -27,7 +27,7 @@ f(60/50)
 
 %%
 % 3)
-data=readmatrix("W2022/Daten Test 3-20221207/ProcessYield_3.csv");
+data=readmatrix("Data/Daten Test 3-20221207/ProcessYield_3.csv");
 T=data(:,1);
 p=data(:,2);
 Y=data(:,3);
